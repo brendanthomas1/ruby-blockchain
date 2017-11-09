@@ -1,8 +1,12 @@
 class Blockchain
-  attr_reader :chain
+  require 'pp'
 
   def initialize
     @chain = [Block.new(index: 0)]
+  end
+
+  def chain
+    @chain.dup
   end
 
   def add_block
@@ -20,7 +24,7 @@ class Blockchain
       @index = index
       @timestamp = Time.now.utc
       @hash = calc_hash
-      @previoush_hash = previous_hash
+      @previous_hash = previous_hash
     end
 
     private
@@ -33,4 +37,4 @@ end
 
 a = Blockchain.new
 a.add_block
-p a.chain
+pp a.chain
