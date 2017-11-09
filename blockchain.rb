@@ -34,7 +34,3 @@ class Blockchain
     end
   end
 end
-
-a = Blockchain.new
-a.add_block
-pp a.chain
