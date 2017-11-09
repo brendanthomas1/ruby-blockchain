@@ -1,6 +1,4 @@
 class Blockchain
-  require 'pp'
-
   def initialize
     @chain = [Block.new(index: 0)]
   end
@@ -10,9 +8,7 @@ class Blockchain
   end
 
   def add_block
-    index = @chain.length
-    previous_hash = @chain.last.hash
-    @chain << Block.new(index: index, previous_hash: previous_hash)
+    @chain << Block.new(index: @chain.length, previous_hash: @chain.last.hash)
   end
 
   class Block

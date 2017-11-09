@@ -1,4 +1,5 @@
 require './blockchain'
+require 'pp'
 
 def start
   @blockchain = Blockchain.new
@@ -38,6 +39,7 @@ while continuing
     add_block
   when '4'
     continuing = false
+    puts 'Bye-Bye'
   else
     puts 'Invalid choice, try again'
     puts
